@@ -10,10 +10,10 @@ public class UIMain : MonoBehaviour {
     void Awake() {
         I = this;
         goContainer = transform.Find("Container").gameObject;
+        Hide();
     }
 
     void Start() {
-        Hide();
     }
 
     public void Show() {
