@@ -13,6 +13,8 @@ public class UICharacterSelect : MonoBehaviour
 
     GameObject goContainer;
 
+    TMP_Text tmpCharacterLabel;
+
     TMP_Dropdown dropdownAttribute1;
     TMP_Dropdown dropdownAttribute2;
     TMP_Dropdown dropdownAttribute3;
@@ -20,6 +22,8 @@ public class UICharacterSelect : MonoBehaviour
     void Awake() {
         I = this;
         goContainer = transform.Find("Container").gameObject;
+
+        tmpCharacterLabel = goContainer.transform.Find("Character Label").GetComponent<TMP_Text>();
 
         dropdownAttribute1 = goContainer.transform.Find("Attribute 1 Panel/Dropdown").GetComponent<TMP_Dropdown>();
         foreach(string attribute in attributesGood) {
@@ -47,5 +51,21 @@ public class UICharacterSelect : MonoBehaviour
 
     public void Hide() {
         goContainer.SetActive(false);
+    }
+
+    // ====================
+    // UI Callbacks
+    // ====================
+    public void OnButtonJaka() {
+        tmpCharacterLabel.text = "Character: Jaka";
+    }
+
+    public void OnButtonPunka() {
+        tmpCharacterLabel.text = "Character: Punka";
+    }
+
+    public void OnButtonLinupaca() {
+        tmpCharacterLabel.text = "Character: Linupaca";
+
     }
 }

@@ -30,10 +30,13 @@ public class SetiCharacterSelect : Seti_Base
 	}
 
 	public override Seti_Base GetNextSeason() {
-		return SetiMock.I;
+		return SetiGame.I;
 	}
 
 	// ====================
 	// UI Callbacks
 	// ====================
+	public void OnButtonStart() {
+		isFinished = true;
+	}
 }

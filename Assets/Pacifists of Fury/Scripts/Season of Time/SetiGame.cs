@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetiIntro : Seti_Base {
-	public static SetiIntro I { get; private set; }
+public class SetiGame : Seti_Base {
 
-	UIIntro uiIntro;
+    public static SetiGame I { get; private set; }
+
+	UIGame uiGame;
 
 	bool isFinished;
 
@@ -14,14 +15,14 @@ public class SetiIntro : Seti_Base {
 	}
 
 	public override void Enter() {
-		uiIntro = UIIntro.I;
-		uiIntro.Show();
+		uiGame = UIGame.I;
+		uiGame.Show();
 
 		isFinished = false;
 	}
 
 	public override void Exit() {
-		uiIntro.Hide();
+		uiGame.Hide();
 	}
 
 	public override bool IsFinished() {
@@ -32,10 +33,4 @@ public class SetiIntro : Seti_Base {
 		return SetiCharacterSelect.I;
 	}
 
-	// ====================
-	// UI Callbacks
-	// ====================
-	public void OnButtonSkip() {
-		isFinished = true;
-	}
 }
